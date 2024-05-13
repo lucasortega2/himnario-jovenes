@@ -1,0 +1,13 @@
+---
+import ButtonBack from '../components/BotonRedireccion.astro';
+import Layout from '../layouts/LayoutPrincipal.astro';
+import Input from '../components/Input';
+import { db, himnos as dataHimnos } from 'astro:db';
+const himnos = await db.select().from(dataHimnos);
+---
+
+<ButtonBack> Inicio </ButtonBack>
+<Layout>
+  <h3 class="text-4xl text-center mt-6">Himnos</h3>
+  <Input client:load himnos={himnos} />
+</Layout>
