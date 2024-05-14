@@ -18,7 +18,7 @@ const $$LayoutPrincipal = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`<html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Himnario jovenes</title>${renderComponent($$result, "ViewTransitions", $$ViewTransitions, {})}${renderHead()}</head> <body class="bg-gray-300"> <main> ${renderSlot($$result, $$slots["default"])} </main> </body></html>`;
 }, "C:/Users/Lucas/Desktop/Himnario/src/layouts/LayoutPrincipal.astro", void 0);
 
-const db = await createRemoteDatabaseClient(process.env.ASTRO_STUDIO_APP_TOKEN ?? "d433f69308cf6b1bfc100146b868efbc9da6c100:mgmyo415vfrr8bl75xbaso5vyeah", {"BASE_URL": "/", "MODE": "production", "DEV": false, "PROD": true, "SSR": true, "SITE": undefined, "ASSETS_PREFIX": undefined}.ASTRO_STUDIO_REMOTE_DB_URL ?? "https://db.services.astro.build");
+const db = await createRemoteDatabaseClient(process.env.ASTRO_STUDIO_APP_TOKEN, {"BASE_URL": "/", "MODE": "production", "DEV": false, "PROD": true, "SSR": true, "SITE": undefined, "ASSETS_PREFIX": undefined}.ASTRO_STUDIO_REMOTE_DB_URL ?? "https://db.services.astro.build");
 const himnos = asDrizzleTable("himnos", { "columns": { "id": { "type": "number", "schema": { "unique": false, "deprecated": false, "name": "id", "collection": "himnos", "primaryKey": true } }, "titulo": { "type": "text", "schema": { "unique": false, "deprecated": false, "name": "titulo", "collection": "himnos", "primaryKey": false, "optional": false } }, "letra": { "type": "text", "schema": { "unique": false, "deprecated": false, "name": "letra", "collection": "himnos", "primaryKey": false, "optional": false } }, "acordes": { "type": "text", "schema": { "unique": false, "deprecated": false, "name": "acordes", "collection": "himnos", "primaryKey": false, "optional": true } } }, "deprecated": false, "indexes": {} }, false);
 
 const $$Astro$1 = createAstro();
@@ -30,7 +30,6 @@ const $$BotonRedireccion = createComponent(($$result, $$props, $$slots) => {
 }, "C:/Users/Lucas/Desktop/Himnario/src/components/BotonRedireccion.astro", void 0);
 
 const $$Astro = createAstro();
-const prerender = false;
 const $$id = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$id;
@@ -47,8 +46,7 @@ const _id_ = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
 	__proto__: null,
 	default: $$id,
 	file: $$file,
-	prerender,
 	url: $$url
 }, Symbol.toStringTag, { value: 'Module' }));
 
-export { $$BotonRedireccion as $, _id_ as _, $$LayoutPrincipal as a, db as d, himnos as h };
+export { $$LayoutPrincipal as $, _id_ as _, $$BotonRedireccion as a, db as d, himnos as h };

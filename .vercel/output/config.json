@@ -18,6 +18,14 @@
 		{
 			"src": "^\\/himnos\\/([^/]+?)\\/?$",
 			"dest": "_render"
+		},
+		{
+			"src": "^\\/listadoHimnos\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/$",
+			"dest": "_render"
 		}
 	]
 }
