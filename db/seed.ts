@@ -4,7 +4,7 @@ import { db, himnos } from 'astro:db';
 export default async function seed() {
   await db.insert(himnos).values([
     {
-      id: 1,
+      id: 2,
       titulo: 'Es un gozo inefable',
       letra: ` 	
 	Encontramos a Cristo el Señor,
@@ -38,7 +38,7 @@ export default async function seed() {
 	Nuestra vida llena está.`,
     },
     {
-      id: 2,
+      id: 3,
       titulo: 'Oh, ven y bebe',
       letra: `
 Bebe! Fluye un río desde el trono del Señor;
