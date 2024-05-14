@@ -2,7 +2,7 @@
 import Layout from '../../layouts/LayoutPrincipal.astro';
 import { db, himnos as dataHimnos, like } from 'astro:db';
 import BotonVolver from '../../components/BotonRedireccion.astro';
-export const prerender = false;
+export const prerender = true;
 export const getStaticPaths = async () => {
   const himnos = await db.select().from(dataHimnos);
   return himnos.map((himno) => ({ params: { id: himno.id }, props: himno }));
