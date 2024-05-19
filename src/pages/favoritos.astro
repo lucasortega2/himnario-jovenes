@@ -1,0 +1,12 @@
+---
+import { db, himnos as dataHimnos } from 'astro:db';
+import Layout from '../layouts/LayoutPrincipal.astro';
+const himnos = await db.select().from(dataHimnos);
+import Favs from '../components/Favs';
+import ButtonHome from '../components/ButtonHome.astro';
+---
+
+<Layout background="bg-black">
+  <ButtonHome> Inicio </ButtonHome>
+  <Favs client:load himnos={himnos} />
+</Layout>
